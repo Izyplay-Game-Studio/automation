@@ -33,7 +33,6 @@ namespace GameworkStore.Automation.Editor
 
         public static void ShowButtonCreate<T>(BuildScript buildScript, string name) where T : BuildPlatform
         {
-            if(buildScript.Has<T>()) return;
             if (GUILayout.Button("New "+ObjectNames.NicifyVariableName(name)))
             {
                 MakeNewBuildPlatform<T>(buildScript, name);
@@ -42,7 +41,6 @@ namespace GameworkStore.Automation.Editor
 
         public static void MakeNewBuildPlatform<T>(BuildScript buildScript, string name) where T : BuildPlatform
         {
-            if(buildScript.Has<T>()) return;
             T bp = CreateInstance<T>();
             bp.name = name;
             PosCreateBuildInstance(buildScript, bp);

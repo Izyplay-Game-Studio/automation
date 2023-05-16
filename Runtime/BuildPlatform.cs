@@ -19,9 +19,24 @@ namespace GameWorkstore.Automation
         [ConditionalField("UseCustomScriptDefinitions")] public ScriptDefinitions ScriptDefinitions = new ScriptDefinitions();
         public bool GenerateBuildNameWithVersion;
 
+        public string Name;
+
         public void InitializeScriptable(BuildScript buildScript)
         {
             this.buildScript = buildScript;
+        }
+
+        private void OnValidate()
+        {   
+            if(Name.Length == 0)
+            {
+                Name = name;
+            }
+            if (Name != name)
+            {
+                name = Name;
+                EditorUtility.SetDirty(this);
+            }
         }
 
         public String GetBuildName()
