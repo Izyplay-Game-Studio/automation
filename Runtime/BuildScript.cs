@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using UnityEditor;
 using UnityEngine;
 using GameWorkstore.Patterns;
 using System.Collections.Generic;

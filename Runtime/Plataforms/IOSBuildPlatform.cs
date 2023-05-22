@@ -1,9 +1,4 @@
-using System;
-using System.Linq;
-using System.IO;
 using UnityEditor;
-using UnityEngine;
-using UnityEditor.Build.Reporting;
 using GameWorkstore.Patterns;
 
 namespace GameWorkstore.Automation

@@ -1,6 +1,5 @@
 using UnityEditor;
 using UnityEngine;
-using GameWorkstore.Patterns;
 
 namespace GameWorkstore.Automation
 {
@@ -19,7 +18,7 @@ namespace GameWorkstore.Automation
                 }
                 else
                 {
-                    DebugMessege.Log("Failed to parse game version.", DebugLevel.ERROR);
+                    Debug.LogError("Failed to parse game version.");
                 }
             }
 
