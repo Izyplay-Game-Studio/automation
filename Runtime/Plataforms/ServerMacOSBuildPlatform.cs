@@ -1,6 +1,6 @@
 using UnityEditor;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     public class ServerMacOSBuildPlatform : StandaloneBuildPlatform
     {

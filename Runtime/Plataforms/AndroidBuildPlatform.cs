@@ -2,16 +2,16 @@ using System;
 using System.IO;
 using UnityEditor;
 using UnityEngine;
-using GameWorkstore.Patterns;
+using NaughtyAttributes;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     public class AndroidBuildPlatform : BuildPlatform
     {
         [Header("Android options")]
         public bool UseKeystore = false;
         public bool UsePackageName = false;
-        [ConditionalField("UsePackageName")] public string PackageName;
+        [ShowIf("UsePackageName")] public string PackageName;
         public bool BuildAPK = false;
         public bool BuildAAB = true;
         public ScriptingImplementation ScriptingBackend = ScriptingImplementation.IL2CPP;
@@ -24,7 +24,7 @@ namespace GameWorkstore.Automation
             public string AliasName;
             public string AliasPassword;
         }
-        [ConditionalField("UseKeystore")] public KeyStoreSettingsStruct KeyStoreSettings;
+        [ShowIf("UseKeystore")] public KeyStoreSettingsStruct KeyStoreSettings;
 
         [MenuItem("Help/Automation/SetAndroidCredentials")]
         public static void SetAndroidSignCredentials(BuildScript buildScript)

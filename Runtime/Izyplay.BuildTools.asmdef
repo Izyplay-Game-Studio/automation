@@ -1,9 +1,9 @@
 {
-    "name": "GameWorkstore.Automation.Editor",
+    "name": "Izyplay.BuildTools",
     "rootNamespace": "",
     "references": [
-        "GUID:381921da55d39454f9a6ce7095941507",
-        "GUID:c32d36751e998d74999be5c29b033d6e"
+        "GUID:72c4fff70ab306d41b6b4659e3d95119",
+        "GUID:776d03a35f1b52c4a9aed9f56d7b4229"
     ],
     "includePlatforms": [
         "Editor"

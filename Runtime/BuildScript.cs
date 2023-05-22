@@ -1,9 +1,8 @@
 ﻿using System;
 using UnityEngine;
-using GameWorkstore.Patterns;
 using System.Collections.Generic;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     [Serializable]
     public class CustomScenes

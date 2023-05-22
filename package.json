@@ -1,7 +1,7 @@
 {
-  "name": "com.gameworkstore.automation",
+  "name": "com.izyplay.buildtools",
   "version": "1.1.5",
-  "displayName": "GameWorkstore Automation",
+  "displayName": "Izyplay Build Tools",
   "description": "Automate your projects with this powerful tool with many build options!",
   "unity": "2020.1",
   "icon": ".icon.png",
@@ -12,6 +12,7 @@
     "url": "https://gameworkstore.com"
   },
   "dependencies": {
-    "com.gameworkstore.patterns": "1.2.0"
+    "izyplay.core": "0.0.1",
+    "com.dbrizov.naughtyattributes": "2.1.4"
   }
 }

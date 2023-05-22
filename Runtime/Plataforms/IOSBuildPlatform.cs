@@ -1,13 +1,13 @@
 using UnityEditor;
-using GameWorkstore.Patterns;
+using NaughtyAttributes;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     public class IOSBuildPlatform : BuildPlatform
     {
 
         public bool UsePackageName = false;
-        [ConditionalField("UsePackageName")] public string PackageName;
+        [ShowIf("UsePackageName")] public string PackageName;
         public string[] AdditionalFolders = new string[0];
 
         public override void OnBuild()

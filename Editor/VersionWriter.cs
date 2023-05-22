@@ -6,7 +6,7 @@ using UnityEditor.Build.Reporting;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     public class VersionWriter : IPreprocessBuildWithReport
     {

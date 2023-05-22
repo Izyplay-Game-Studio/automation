@@ -2,11 +2,12 @@ using System;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
-using GameWorkstore.Patterns;
+using NaughtyAttributes;
+using Izyplay.Core;
 using UnityEditor.Build.Reporting;
 using System.IO;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     public abstract class BuildPlatform : ScriptableObject
     {
@@ -15,8 +16,8 @@ namespace GameWorkstore.Automation
         public bool UseCustomScenes = false;
         public bool UseCustomScriptDefinitions = false;
         public bool Development = false;
-        [ConditionalField("UseCustomScenes")] public CustomScenes Scenes = new CustomScenes();
-        [ConditionalField("UseCustomScriptDefinitions")] public ScriptDefinitions ScriptDefinitions = new ScriptDefinitions();
+        [ShowIf("UseCustomScenes")] public CustomScenes Scenes = new CustomScenes();
+        [ShowIf("UseCustomScriptDefinitions")] public ScriptDefinitions ScriptDefinitions = new ScriptDefinitions();
         public bool GenerateBuildNameWithVersion;
 
         public string Name;
@@ -133,7 +134,7 @@ namespace GameWorkstore.Automation
             }
         }
 
-        [ButtonMethod]
+        [Button]
         public virtual void Build() 
         {
             if (!Validate(buildScript)) return;
@@ -146,17 +147,17 @@ namespace GameWorkstore.Automation
         {
             if (buildScript == null)
             {
-                DebugMessege.Log("Cannot build without a BuildScript.", DebugLevel.ERROR);
+                IzyDebug.LogError("Cannot build without a BuildScript.");
                 return false;
             }
             if (string.IsNullOrEmpty(buildScript.GameName))
             {
-                DebugMessege.Log("GameName cannot be null or empty.", DebugLevel.ERROR);
+                IzyDebug.LogError("GameName cannot be null or empty.");
                 return false;
             }
             if(buildScript.GameVersionWriterConfig.Enabled && string.IsNullOrEmpty(buildScript.GameVersionWriterConfig.Namespace))
             {
-                DebugMessege.Log("GameVersionWriter namespace cannot be null or empty.", DebugLevel.ERROR);
+                IzyDebug.LogError("GameVersionWriter namespace cannot be null or empty.");
                 return false;
             }
             return true;

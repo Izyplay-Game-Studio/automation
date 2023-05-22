@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace GameWorkstore.Automation
+namespace Izyplay.BuildTools
 {
     public class UWPBuildPlatform : BuildPlatform
     {

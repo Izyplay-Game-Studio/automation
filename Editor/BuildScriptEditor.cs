@@ -1,9 +1,8 @@
 using System;
-using GameWorkstore.Automation;
 using UnityEditor;
 using UnityEngine;
 
-namespace GameworkStore.Automation.Editor
+namespace Izyplay.BuildTools.Editor
 {
     [CustomEditor(typeof(BuildScript))]
     public class BuildScriptEditor : UnityEditor.Editor
